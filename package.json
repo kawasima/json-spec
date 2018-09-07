@@ -1,0 +1,22 @@
+{
+  "name": "json-spec",
+  "version": "0.1.0-SNAPSHOT",
+  "description": "A tool for describing the structure of JSON data",
+  "license": "MIT",
+  "repository": "github:kawasima/json-spec",
+  "scripts": {
+    "test": "jest"
+  },
+  "jest": {
+    "moduleDirectories": [
+      "src",
+      "node_modules"
+    ]
+  },
+  "devDependencies": {
+    "jest": "^23.5.0"
+  },
+  "dependencies": {
+    "n64": "^0.2.1"
+  }
+}
