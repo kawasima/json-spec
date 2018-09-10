@@ -53,19 +53,21 @@ function join(coll) {
 }
 
 const generators = {
-  'int': sized((size) => choose(-size, size)),
-  'char': fmap(String.fromCharCode, choose(0, 255)),
-  'char-ascii': fmap(String.fromCharCode, choose(32, 126)),
-  'char-alphanumeric': fmap(String.fromCharCode, oneOf(
+  int: sized((size) => choose(-size, size)),
+  char: fmap(String.fromCharCode, choose(0, 255)),
+  charAscii: fmap(String.fromCharCode, choose(32, 126)),
+  charAlphanumeric: fmap(String.fromCharCode, oneOf(
     choose(48, 57),
     choose(65, 90),
     choose(97, 122)
   )),
-  'char-alpha': fmap(String.fromCharCode, oneOf(
+  charAlpha: fmap(String.fromCharCode, oneOf(
     choose(65, 90),
     choose(97, 122)
   )),
-  'string': fmap(join, vector(fmap(String.fromCharCode, choose(0, 255))))
+  get string() { return fmap(join, vector(this.char)) },
+  get stringAscii() { return fmap(join, vector(this.charAscii)) },
+  get stringAlphanumeric() { return fmap(join, vector(this.charAlphanumeric)) },
 }
 
 class RandomUnit {

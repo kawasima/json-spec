@@ -7,17 +7,17 @@ describe('generators', () => {
   })
 
   test('sample-char', () => {
-    const v = sample(generators['char']);
+    const v = sample(generators.char);
     console.log(v);
   })
 
   test('sample-char-alphanumeric', () => {
-    const v = sample(generators['char-alphanumeric']);
+    const v = sample(generators.charAlphanumeric);
     console.log(v);
   })
 
   test('sample-string', () => {
-    const v = sample(generators['string']);
+    const v = sample(generators.stringAscii);
     console.log(v);
   })
 })

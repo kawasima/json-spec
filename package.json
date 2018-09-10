@@ -11,6 +11,9 @@
     "moduleDirectories": [
       "src",
       "node_modules"
+    ],
+    "testMatch": [
+      "**/test/*.test.js?(x)"
     ]
   },
   "devDependencies": {
