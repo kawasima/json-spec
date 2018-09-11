@@ -1,4 +1,4 @@
-const { sample, choose,generators }  = require('generators');
+const { sample, choose,generators,genObject }  = require('generators');
 
 describe('generators', () => {
   test('sample-choose', () => {
@@ -20,4 +20,30 @@ describe('generators', () => {
     const v = sample(generators.stringAscii);
     console.log(v);
   })
+
+  test('sample-largeInteger', () => {
+    const v = sample(generators.largeInteger);
+    console.log(v);
+  })
+
+  test('sample-boolean', () => {
+    const v = sample(generators.boolean);
+    console.log(v);
+  })
+
+  test('sample-date', () => {
+    const v = sample(generators.date);
+    console.log(v);
+  })
+
+  test('sample-object', () => {
+    const v = sample(genObject({
+      a: generators.stringAlphanumeric,
+      b: genObject({
+        c: generators.boolean
+      })
+    }));
+    console.log(v);
+  })
+
 })

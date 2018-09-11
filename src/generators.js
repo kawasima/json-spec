@@ -1,14 +1,7 @@
 const { I64 } = require('n64');
 
-class Generator {
-  constructor(gen) {
-    this.gen = gen;
-  }
-}
-
-function makeGen(generatorFunc) {
-  return new Generator(generatorFunc);
-}
+const MAX_INTEGER = Math.pow(2, 53) - 1;
+const MIN_INTEGER = -MAX_INTEGER;
 
 function callGen(gen, rnd, size) {
   return gen.call(null, rnd, size);
@@ -21,16 +14,46 @@ function choose(lower, upper) {
   };
 }
 
+function suchThat(pred, gen, maxTries) {
+  return (rnd, size) => {
+    let s = size;
+    for(let i=0; i<maxTries; i++) {
+      const value = callGen(gen, rnd, s);
+      if (pred(value)) {
+        return value;
+      }
+      s += 1;
+    }
+    throw "Reach the max tries";
+  }
+}
+
+function tuple(...generators) {
+  return (rnd, size) => generators.map(gen => callGen(gen, rnd, size));
+}
+
+function genBind(generator, k) {
+  return (rnd, size) => {
+    const inner = callGen(generator, rnd, size);
+    const result = k.call(null, inner);
+    return callGen(result, rnd, size);
+  };
+}
+
 function fmap(f, generator) {
-  return (rnd, size) => f(generator(rnd,size));
+  return (rnd, size) => f(generator(rnd, size));
 }
 
 function repeat(n, el) {
-  return Array.apply(null, Array(10)).map(() => el);
+  return Array.apply(null, Array(n)).map(() => el);
 }
 
 function vector(generator) {
-  return (rnd, size) => repeat(size, generator).map(gen => gen(rnd, size));
+  return genBind(sized(x => choose(0, x)),
+                 numElements => {
+                   return (rnd, size) => repeat(numElements, generator).map(gen => gen(rnd, size))
+                 });
+  //return (rnd, size) => repeat(size, generator).map(gen => gen(rnd, size));
 }
 
 function calcLong(factor, lower, upper) {
@@ -52,6 +75,10 @@ function join(coll) {
   return coll.join('');
 }
 
+function largeInteger_({min=MIN_INTEGER, max=MAX_INTEGER}) {
+  return choose(min, max);
+}
+
 const generators = {
   int: sized((size) => choose(-size, size)),
   char: fmap(String.fromCharCode, choose(0, 255)),
@@ -65,9 +92,22 @@ const generators = {
     choose(65, 90),
     choose(97, 122)
   )),
+  boolean: elements([false, true]),
+  date: fmap(x=> new Date(x), largeInteger_({})),
   get string() { return fmap(join, vector(this.char)) },
   get stringAscii() { return fmap(join, vector(this.charAscii)) },
   get stringAlphanumeric() { return fmap(join, vector(this.charAlphanumeric)) },
+  get largeInteger() { return largeInteger_({}) },
+}
+
+function genObject(generators) {
+  return (rnd, size) => {
+    const obj = {};
+    for (k in generators) {
+      obj[k] = callGen(generators[k], rnd, size);
+    }
+    return obj;
+  };
 }
 
 class RandomUnit {
@@ -112,7 +152,7 @@ function sample(generator, numSample = 10) {
   const range = rangeCyclic(0, numSample);
   const result = new Array(numSample);
   for (let i = 0; i < numSample; i++) {
-    result[i] = generator.call(null, randomUnit, range.next());
+    result[i] = generator.call(null, randomUnit, range.next().value);
   }
   return result;
 }
@@ -122,5 +162,9 @@ module.exports = {
   fmap,
   sample,
   oneOf,
-  choose
+  choose,
+  genObject,
+  vector,
+  tuple,
+  suchThat
 }
