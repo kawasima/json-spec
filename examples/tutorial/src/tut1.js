@@ -13,7 +13,7 @@ const person = s.object({
   postalCd:  sp.postalCode_JP,
   languages: s.array([
     "C", "C++", "Java"
-  ])
+  ], { distinct: true, maxCount: 3 })
 });
 
 console.log(gen.sample(s.gen(person)));
