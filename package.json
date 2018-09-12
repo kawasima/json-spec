@@ -1,23 +1,28 @@
 {
-  "name": "json-spec",
+  "name": "@json-spec/root",
   "version": "0.1.0-SNAPSHOT",
-  "description": "A tool for describing the structure of JSON data",
-  "license": "MIT",
+  "private": true,
   "repository": "github:kawasima/json-spec",
+  "description": "A tool for describing the structure of JSON data",
+  "license": "EPL",
+  "workspaces": [
+    "lib/*",
+    "specs/*",
+    "examples/*"
+  ],
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "tutorial": "node examples/tutorial/src/tut1.js"
   },
   "jest": {
     "moduleDirectories": [
       "src",
       "node_modules"
-    ],
-    "testMatch": [
-      "**/test/*.test.js?(x)"
     ]
   },
   "devDependencies": {
-    "jest": "^23.5.0"
+    "jest": "^23.5.0",
+    "lerna": "^3.3.0"
   },
   "dependencies": {
     "lodash": "^4.17.10",

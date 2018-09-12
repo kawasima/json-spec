@@ -1,0 +1,8 @@
+{
+  "name": "@json-spec/core",
+  "version": "0.1.0-SNAPSHOT",
+  "main": "./src/index.js",
+  "dependencies": {
+    "@json-spec/testcheck": "^0.1.0-SNAPSHOT"
+  }
+}

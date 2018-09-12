@@ -1,0 +1,9 @@
+{
+  "name": "@json-spec/spec-range",
+  "version": "0.1.0-SNAPSHOT",
+  "main": "./src/index.js",
+  "dependencies": {
+    "@json-spec/core": "0.1.0-SNAPSHOT",
+    "@json-spec/spec-basic": "0.1.0-SNAPSHOT"
+  }
+}

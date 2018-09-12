@@ -1,0 +1,5 @@
+{
+  "name": "@json-spec/testcheck",
+  "version": "0.1.0-SNAPSHOT",
+  "main": "./src/index.js"
+}
