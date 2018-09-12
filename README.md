@@ -8,7 +8,7 @@ JSON Spec is a tool for validation and generation of JSON data. This is a portin
 Spec is defined as follows
 
 ```javascript
-const s = require('json-spec');
+const s = require('@json-spec/core');
 const bigEven = s.and(x => !isNaN(Number(x)), x => x%2 === 0, x => x > 1000);
 ```
 
