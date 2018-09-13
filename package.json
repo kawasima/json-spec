@@ -12,6 +12,7 @@
   ],
   "scripts": {
     "test": "jest",
+    "test:watch": "jest --watch",
     "tutorial": "node examples/tutorial/src/tut1.js"
   },
   "jest": {
@@ -25,7 +26,5 @@
     "lerna": "^3.3.0"
   },
   "dependencies": {
-    "lodash": "^4.17.10",
-    "n64": "^0.2.1"
   }
 }

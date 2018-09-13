@@ -3,6 +3,7 @@
   "version": "0.1.0-SNAPSHOT",
   "main": "./src/index.js",
   "dependencies": {
+    "n64": "^0.2.1",
     "@json-spec/testcheck": "^0.1.0-SNAPSHOT"
   }
 }
