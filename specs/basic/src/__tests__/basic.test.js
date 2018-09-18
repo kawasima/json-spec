@@ -44,7 +44,7 @@ describe('generation', () => {
                                  x => gen.fmap(([s1, s2, s3]) => `${s1}@${s2}.${s3}`,
                                                gen.tuple(gen.generators.stringAlphanumeric,
                                                          gen.generators.stringAlphanumeric,
-                                                         gen.generators.stringAlphanumeric))))
+                                                         gen.generators.stringAlpha))))
       }
     });
     const res = gen.sample(s.gen(person));
