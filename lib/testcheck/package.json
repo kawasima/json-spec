@@ -1,5 +1,6 @@
 {
   "name": "@json-spec/testcheck",
   "version": "0.1.1-alpha.0",
-  "main": "./src/index.js"
+  "main": "./src/index.js",
+  "gitHead": "3a6df1d730449208b7db3816fb1db26cd672228c"
 }
