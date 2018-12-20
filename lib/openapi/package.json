@@ -2,6 +2,11 @@
   "name": "@json-spec/openapi",
   "version": "0.1.0-SNAPSHOT",
   "repository": "github:kawasima/json-spec-openapi",
+
+  "bin": {
+    "json-spec-server": "./bin/json-spec-server.js",
+    "json-spec-client": "./bin/json-spec-client.js"
+  },
   "dependencies": {
     "@json-spec/core": "0.1.0-SNAPSHOT",
     "@json-spec/spec-basic": "0.1.0-SNAPSHOT",

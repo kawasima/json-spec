@@ -1,6 +1,6 @@
 {
-  "version": "0.1.0-SNAPSHOT",
-  "npmClient": "yarn",
+  "version": "0.1.0",
+  "npmClient": "npm",
   "useWorkspaces": true,
   "command": {
     "publish": {
