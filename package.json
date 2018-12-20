@@ -13,7 +13,9 @@
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
-    "tutorial": "node examples/tutorial/src/tut1.js"
+    "tutorial": "node examples/tutorial/src/tut1.js",
+    "openapi:server": "node lib/openapi/src/server.js",
+    "openapi:client": "node lib/openapi/src/client.js"
   },
   "jest": {
     "moduleDirectories": [
@@ -25,6 +27,5 @@
     "jest": "^23.5.0",
     "lerna": "^3.3.0"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
