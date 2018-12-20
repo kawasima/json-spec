@@ -1,9 +1,9 @@
 {
   "name": "@json-spec/core",
-  "version": "0.1.0-SNAPSHOT",
+  "version": "0.1.1-alpha.0",
   "main": "./src/index.js",
   "dependencies": {
-    "n64": "^0.2.1",
-    "@json-spec/testcheck": "^0.1.0-SNAPSHOT"
+    "@json-spec/testcheck": "^0.1.1-alpha.0",
+    "n64": "^0.2.1"
   }
 }

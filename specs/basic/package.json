@@ -1,8 +1,8 @@
 {
   "name": "@json-spec/spec-basic",
-  "version": "0.1.0-SNAPSHOT",
+  "version": "0.1.1-alpha.0",
   "main": "./src/index.js",
   "dependencies": {
-    "@json-spec/core": "^0.1.0-SNAPSHOT"
+    "@json-spec/core": "^0.1.1-alpha.0"
   }
 }
