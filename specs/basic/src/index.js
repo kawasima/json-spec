@@ -1,5 +1,5 @@
 const { spec } = require('@json-spec/core');
-const { generators } = require('@json-spec/core/gen');
+const { generators, elements } = require('@json-spec/core/gen');
 
 const int_ = spec(x => typeof x === 'number' && isFinite(x) && Math.floor(x) === x,
                   { gen: () => generators.int });
@@ -18,11 +18,14 @@ const boolean_ = spec(x => typeof x === 'boolean',
 
 const posInt = spec(x => typeof x === 'number' && isFinite(x) && Math.floor(x) === x && x >= 0,
                     { gen: () => generators.posInt });
+
+const enum_ = (coll) => spec(x => coll.includes(x), { gen: () => elements(coll) });
 module.exports = {
   int: int_,
   string: string_,
   boolean: boolean_,
   date: date_,
   number: number_,
-  posInt
+  posInt,
+  enum: enum_
 }
