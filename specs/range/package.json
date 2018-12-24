@@ -2,6 +2,9 @@
   "name": "@json-spec/spec-range",
   "version": "0.1.1-alpha.0",
   "main": "./src/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "@json-spec/core": "^0.1.1-alpha.0",
     "@json-spec/spec-basic": "^0.1.1-alpha.0"
