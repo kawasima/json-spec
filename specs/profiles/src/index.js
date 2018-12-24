@@ -20,6 +20,24 @@ const name = ({size=100, locale='en'}) =>
              faker.locale = orig;
              return ret;
            }});
+const firstName = ({size=100, locale='en'}) =>
+      spec(and(basic.string, x => 0 < x.length && x.length <= size),
+           {gen: () => (rnd, size) => {
+             const orig = faker.locale;
+             faker.locale = locale;
+             const ret = faker.name.firstName();
+             faker.locale = orig;
+             return ret;
+           }});
+const lastName = ({size=100, locale='en'}) =>
+      spec(and(basic.string, x => 0 < x.length && x.length <= size),
+           {gen: () => (rnd, size) => {
+             const orig = faker.locale;
+             faker.locale = locale;
+             const ret = faker.name.lastName();
+             faker.locale = orig;
+             return ret;
+           }});
 
 const account = ({size=100}) =>
       spec(and(basic.string, x => 0 < x.length && x.length <= size),
@@ -40,6 +58,8 @@ const birthDay = spec(and(basic.date, range.dateIn(new Date(1900, 1), new Date()
                         gen(range.dateIn(new Date(1900, 1), new Date())))});
 
 module.exports = {
+  firstName,
+  lastName,
   name,
   account,
   email,

@@ -7,13 +7,17 @@ const sb = require('@json-spec/spec-basic');
  Specification of a person object.
  */
 const person = s.object({
-  firstName: sp.name({ size: 100 }),
-  lastName:  sp.name({ size: 100 }),
-  birthDay:  sp.birthDay,
-  postalCd:  sp.postalCode_JP,
-  languages: s.array([
-    "C", "C++", "Java"
-  ], { distinct: true, maxCount: 3 })
+  required: {
+    firstName: sp.firstName({ size: 100, locale:"ja"}),
+    lastName:  sp.lastName({ size: 100, locale: "ja" }),
+    languages: s.array([
+      "C", "C++", "Java"
+    ], { distinct: true, maxCount: 3 })
+  },
+  optional: {
+    birthDay:  sp.birthDay,
+    postalCd:  sp.postalCode_JP
+  }
 });
 
 console.log(gen.sample(s.gen(person)));
