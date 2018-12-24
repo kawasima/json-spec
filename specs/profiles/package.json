@@ -1,13 +1,13 @@
 {
   "name": "@json-spec/spec-profiles",
-  "version": "0.1.1-0.1.1-alpha.2.0",
+  "version": "0.1.1-alpha.2",
   "main": "./src/index.js",
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "@json-spec/core": "^0.1.1-0.1.1-alpha.2.0",
-    "@json-spec/spec-basic": "^0.1.1-0.1.1-alpha.2.0",
+    "@json-spec/core": "^0.1.1-alpha.2",
+    "@json-spec/spec-basic": "^0.1.1-alpha.2",
     "faker": "^4.1.0"
   },
   "gitHead": "3a6df1d730449208b7db3816fb1db26cd672228c"
