@@ -1,6 +1,6 @@
 {
   "name": "@json-spec/testcheck",
-  "version": "0.1.1-alpha.0",
+  "version": "0.1.1-0.1.1-alpha.2.0",
   "publishConfig": {
     "access": "public"
   },
