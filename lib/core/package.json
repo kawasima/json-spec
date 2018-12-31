@@ -2,12 +2,17 @@
   "name": "@json-spec/core",
   "version": "0.1.1",
   "main": "./src/index.js",
+  "scripts": {
+    "test": "jest"
+  },
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "@json-spec/testcheck": "^0.1.1",
-    "n64": "^0.2.1"
+    "@json-spec/testcheck": "^0.1.1"
+  },
+  "devDependencies": {
+    "jest": "^23.6.0"
   },
   "gitHead": "3a6df1d730449208b7db3816fb1db26cd672228c"
 }

@@ -24,13 +24,17 @@ describe('entity maps', () => {
 
 describe('generation', () => {
   test('stirng', () => {
-    const res = gen.sample(s.gen(basic.string));
-    console.log(res);
+    expect(gen.sample(s.gen(basic.string)))
+      .toEqual(expect.arrayContaining([
+        expect.stringMatching(/[a-zA-Z0-9]*/)
+      ]));
   })
 
   test('and', () => {
-    const res = gen.sample(s.gen(s.and(basic.string, x => x.length > 10)));
-    console.log(res);
+    gen.sample(s.gen(s.and(basic.string, x => x.length > 10))).forEach(v => {
+      expect(v.length).toBeGreaterThan(10);
+      expect(v).toEqual(expect.stringMatching(/[a-zA-Z0-9]*/));
+    });
   })
 
   test('object', () => {
@@ -44,10 +48,14 @@ describe('generation', () => {
                                  x => gen.fmap(([s1, s2, s3]) => `${s1}@${s2}.${s3}`,
                                                gen.tuple(gen.generators.stringAlphanumeric,
                                                          gen.generators.stringAlphanumeric,
-                                                         gen.generators.stringAlpha))))
+                                                         gen.generators.stringAlpha))),
+                       { minCount: 1})
       }
     });
-    const res = gen.sample(s.gen(person));
-    console.log(res);
+    gen.sample(s.gen(person)).forEach(p => {
+      expect(p.email)
+        .toEqual(expect.arrayContaining(
+          [expect.stringMatching(/^($|[A-Za-z0-9]+@[A-Za-z0-9]+\.[A-Za-z]+$)/)]));
+    });
   });
 });

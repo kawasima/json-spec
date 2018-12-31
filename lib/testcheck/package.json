@@ -1,9 +1,18 @@
 {
   "name": "@json-spec/testcheck",
   "version": "0.1.1",
+  "scripts": {
+    "test": "jest"
+  },
   "publishConfig": {
     "access": "public"
   },
   "main": "./src/index.js",
-  "gitHead": "3a6df1d730449208b7db3816fb1db26cd672228c"
+  "gitHead": "3a6df1d730449208b7db3816fb1db26cd672228c",
+  "dependencies": {
+    "n64": "^0.2.5"
+  },
+  "devDependencies": {
+    "jest": "^23.6.0"
+  }
 }

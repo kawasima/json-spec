@@ -1,7 +1,6 @@
 {
   "version": "0.1.1",
   "npmClient": "npm",
-  "useWorkspaces": true,
   "command": {
     "publish": {
       "ignoreChanges": [
@@ -17,8 +16,8 @@
     }
   },
   "packages": [
-    "lib/*",
-    "specs/*",
-    "examples/*"
+    "lib/**",
+    "specs/**",
+    "examples/**"
   ]
 }
