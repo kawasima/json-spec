@@ -3,7 +3,8 @@
   "version": "0.1.2",
   "private": true,
   "scripts": {
-    "tut1": "node src/tut1.js"
+    "tut1": "node src/tut1.js",
+    "repl": "node -i"
   },
   "dependencies": {
     "@json-spec/core": "^0.1.2",
