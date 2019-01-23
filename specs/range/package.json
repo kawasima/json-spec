@@ -1,13 +1,13 @@
 {
   "name": "@json-spec/spec-range",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "main": "./src/index.js",
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "@json-spec/core": "^0.1.3",
-    "@json-spec/spec-basic": "^0.1.3"
+    "@json-spec/core": "^0.1.4",
+    "@json-spec/spec-basic": "^0.1.4"
   },
   "devDependencies": {
     "jest": "^23.6.0"
