@@ -1,15 +1,15 @@
 {
   "name": "@json-spec/exapmle-turorial",
-  "version": "0.1.4",
+  "version": "0.1.6",
   "private": true,
   "scripts": {
     "tut1": "node src/tut1.js",
     "repl": "node -i"
   },
   "dependencies": {
-    "@json-spec/core": "^0.1.4",
-    "@json-spec/spec-basic": "^0.1.4",
-    "@json-spec/spec-profiles": "^0.1.4",
-    "@json-spec/spec-range": "^0.1.4"
+    "@json-spec/core": "^0.1.6",
+    "@json-spec/spec-basic": "^0.1.6",
+    "@json-spec/spec-profiles": "^0.1.6",
+    "@json-spec/spec-range": "^0.1.6"
   }
 }
