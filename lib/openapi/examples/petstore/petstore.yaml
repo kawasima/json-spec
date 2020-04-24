@@ -724,6 +724,7 @@ components:
       - name
       - photoUrls
       type: object
+      x-json-spec: Pet
       properties:
         id:
           type: integer
