@@ -14,8 +14,9 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "tutorial": "node examples/tutorial/src/tut1.js",
-    "openapi:server": "node lib/openapi/src/server.js",
-    "openapi:client": "node lib/openapi/src/client.js"
+    "openapi:server": "node lib/openapi/bin/server.js",
+    "openapi:client": "node lib/openapi/bin/client.js",
+    "openapi:guesser": "node lib/openapi/bin/guesser.js"
   },
   "jest": {
     "moduleDirectories": [
@@ -24,8 +25,8 @@
     ]
   },
   "devDependencies": {
-    "jest": "^23.6.0",
-    "lerna": "^3.8.0"
+    "jest": "^25.1.0",
+    "lerna": "^3.20.2"
   },
   "dependencies": {}
 }

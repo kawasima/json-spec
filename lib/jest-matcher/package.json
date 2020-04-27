@@ -1,0 +1,22 @@
+{
+  "name": "@json-spec/jest-matcher",
+  "version": "0.1.8",
+  "repository": "github:kawasima/json-spec",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "repl": "node dev/repl.js"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "./src/index.js",
+  "dependencies": {
+    "@json-spec/core": "^0.1.8",
+    "jest-matcher-utils": "^25.4.0"
+  },
+  "devDependencies": {
+    "@json-spec/spec-basic": "^0.1.8",
+    "jest": "^25.4.0"
+  }
+}
