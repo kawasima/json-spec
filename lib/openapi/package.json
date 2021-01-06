@@ -20,7 +20,7 @@
     "@json-spec/spec-basic": "^0.1.8",
     "@json-spec/spec-profiles": "^0.1.8",
     "@json-spec/spec-range": "^0.1.8",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "body-parser": "^1.19.0",
     "colo": "^1.0.0",
     "express": "^4.17.1",
