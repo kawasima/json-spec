@@ -13,10 +13,10 @@
   "main": "./src/index.js",
   "dependencies": {
     "@json-spec/core": "^0.1.8",
-    "jest-matcher-utils": "^25.4.0"
+    "jest-matcher-utils": "^26.6.2"
   },
   "devDependencies": {
     "@json-spec/spec-basic": "^0.1.8",
-    "jest": "^25.4.0"
+    "jest": "^26.6.3"
   }
 }
