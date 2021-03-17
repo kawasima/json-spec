@@ -1,6 +1,6 @@
 {
   "name": "@json-spec/core",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "main": "./src/index.js",
   "scripts": {
     "test": "jest"
@@ -9,7 +9,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@json-spec/testcheck": "^0.1.9"
+    "@json-spec/testcheck": "^0.1.10"
   },
   "devDependencies": {
     "jest": "^26.6.3"

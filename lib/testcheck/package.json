@@ -1,6 +1,6 @@
 {
   "name": "@json-spec/testcheck",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "scripts": {
     "test": "jest",
     "repl": "node dev/repl.js"
