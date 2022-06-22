@@ -1,6 +1,6 @@
 {
   "name": "@json-spec/openapi",
-  "version": "0.1.10",
+  "version": "0.1.12",
   "repository": "github:kawasima/json-spec-openapi",
   "bin": {
     "json-spec-server": "./bin/server.js",
@@ -16,10 +16,10 @@
     "access": "public"
   },
   "dependencies": {
-    "@json-spec/core": "^0.1.10",
-    "@json-spec/spec-basic": "^0.1.10",
-    "@json-spec/spec-profiles": "^0.1.10",
-    "@json-spec/spec-range": "^0.1.10",
+    "@json-spec/core": "^0.1.12",
+    "@json-spec/spec-basic": "^0.1.12",
+    "@json-spec/spec-profiles": "^0.1.12",
+    "@json-spec/spec-range": "^0.1.12",
     "axios": "^0.21.1",
     "body-parser": "^1.19.0",
     "colo": "^1.0.0",

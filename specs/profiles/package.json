@@ -1,6 +1,6 @@
 {
   "name": "@json-spec/spec-profiles",
-  "version": "0.1.10",
+  "version": "0.1.12",
   "main": "./src/index.js",
   "scripts": {
     "test": "jest"
@@ -9,9 +9,9 @@
     "access": "public"
   },
   "dependencies": {
-    "@json-spec/core": "^0.1.10",
-    "@json-spec/spec-basic": "^0.1.10",
-    "@json-spec/spec-range": "^0.1.10",
+    "@json-spec/core": "^0.1.12",
+    "@json-spec/spec-basic": "^0.1.12",
+    "@json-spec/spec-range": "^0.1.12",
     "faker": "^5.4.0"
   },
   "devDependencies": {
